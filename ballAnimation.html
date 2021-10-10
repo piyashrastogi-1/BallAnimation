@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BallAnimation</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+
+        width: 100%; 
+        height: 100vh; 
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        flex-direction: column;
+ 
+      }
+      .ball {
+
+        width: 70px;
+        height: 70px;
+        background-image: linear-gradient(yellow 50%, blue 50%);
+        border-radius: 50%;
+        animation: bounce 2s linear infinite;
+
+      }
+
+      @keyframes bounce {
+          0%
+          {
+              transform: translateY(0px) rotate(0deg);
+          }
+          50%
+          {
+              transform: translateY(-200px) rotate(180deg);
+          }100%
+          {
+              transform: translateY(0px) rotate(360deg);
+          }
+      }
+      .shadow
+      {
+          width: 70px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: grey;
+          animation: shadow 2s linear infinite;
+      }
+      @keyframes shadow {
+          0%
+          {
+             transform: scale(1);
+          }
+          50%
+          {
+              transform: scale(0.3);
+              opacity: .3;
+          }
+          100%
+          {
+              transform: scale(1);
+          }
+        }
+
+        p
+        {
+            margin-top: 30px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+        .dots
+        {
+
+            font-size: 40px;
+            margin-left: 10px;
+            animation: dots 2s linear infinite;
+        }
+
+        @keyframes dots {
+            0%
+          {
+             opacity: 1;
+          }
+          50%
+          {
+              
+              opacity: 0;
+          }
+          100%
+          {
+              opacity: 1;
+          }
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+    <div class="ball"></div>
+    <div class="shadow"></div>
+        <div class="loading"><p>Loading<span class="dots">...</span></p</div>
+    </div>
+    
+  </body>
+</html>
